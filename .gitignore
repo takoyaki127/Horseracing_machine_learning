@@ -7,3 +7,6 @@ chromedriver_win32/chromedriver.exe
 chromedriver_win32/LICENSE.chromedriver
 __pycache__/score.cpython-310.pyc
 sample/Untitled.ipynb
+module/__pycache__/create_url.cpython-310.pyc
+module/__pycache__/date_scraping.cpython-310.pyc
+module/__pycache__/race_scraping.cpython-310.pyc
