@@ -17,5 +17,3 @@ url_list = []
 for ele in event_url:
     url_list.extend(day_to_race(ele))
     time.sleep(1)
-
-pass
