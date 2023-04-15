@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 
 # 開催日からレースのURLをスクレイピング
 # chromeドライバを'./chromedriver_win32/chromedriver.exe'に入れてください。
+# ※　time.sleep()を使ってください。
 def day_to_race(url):
     url = url
 

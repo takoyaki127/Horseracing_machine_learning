@@ -4,6 +4,7 @@ import lxml
 
 
 # カレンダーから開催日のURLをスクレイピング
+# ※　time.sleep()を使ってください。
 def calender_to_event_date_link(url):
     url = url
 

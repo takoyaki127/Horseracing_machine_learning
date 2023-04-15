@@ -1,7 +1,6 @@
 import time
 
 
-# ※　time.sleep()を使ってください。
 def create_calender_URL(year_start, year_end, month_start=1, month_end=12):
     # https://race.netkeiba.com/top/calendar.html?year=2015&month=7
     url_head = 'https://race.netkeiba.com/top/calendar.html?'
