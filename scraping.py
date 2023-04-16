@@ -3,8 +3,8 @@ import pandas as pd
 from result import Result
 
 
-def scraping_result(url, scores: list[Result]):
-    # url = "https://db.netkeiba.com/race/202306010611/"
+def scraping_result(race_id, scores: list[Result]):
+    url = f"https://race.netkeiba.com/race/result.html?race_id={race_id}&rf=race_list"
     dfs = pd.read_html(url)
     df = dfs[0]
 
@@ -18,7 +18,7 @@ def scraping_result(url, scores: list[Result]):
         for ele in scores:
             if ele.horse_name == horse_name and ele.jockey == jockey:
                 ele.add_score(rank)
-                ele.count_up()
+                # ele.count_up()
                 flag = True
                 break
 
