@@ -5,10 +5,10 @@ import time
 import csv
 
 # 日付の指定
-year_start = 2022
-year_end = 2022
+year_start = 2021
+year_end = 2021
 month_start = 1
-month_end = 12
+month_end = 1
 
 
 # 開催日程のURLを生成   (year_start,year_end,month_start=1,month_end=12)
@@ -32,7 +32,7 @@ for ele in event_url:
     time.sleep(0.2)
 
 # ファイル書き込み
-file_name = f'race_id_{year_start,month_start}_{year_end,month_end}.csv'
+file_name = f'csv/race_id_{year_start,month_start}_{year_end,month_end}.csv'
 with open(file_name, 'w') as f:
     writer = csv.writer(f)
     writer.writerow(race_ids)
