@@ -1,17 +1,15 @@
-.ipynb_checkpoints/Untitled-checkpoint.ipynb
-__pycache__/create_url.cpython-310.pyc
-__pycache__/date_scraping.cpython-310.pyc
-__pycache__/race_scraping.cpython-310.pyc
-__pycache__/result.cpython-310.pyc
-chromedriver_win32/chromedriver.exe
-chromedriver_win32/LICENSE.chromedriver
-__pycache__/score.cpython-310.pyc
-sample/Untitled.ipynb
-module/__pycache__/create_url.cpython-310.pyc
-module/__pycache__/date_scraping.cpython-310.pyc
 module/__pycache__/race_scraping.cpython-310.pyc
-Race_URL.csv
-race_id_(2022, 1)_(2022, 12).csv
-race_id_(2023, 1)_(2023, 3).csv
+module/__pycache__/date_scraping.cpython-310.pyc
+module/__pycache__/create_url.cpython-310.pyc
+csv/race_id_(2023, 1)_(2023, 3).csv
+csv/race_id_(2022, 1)_(2022, 12).csv
+chromedriver_win32/LICENSE.chromedriver
+chromedriver_win32/chromedriver.exe
 __pycache__/scraping.cpython-310.pyc
+__pycache__/score.cpython-310.pyc
+__pycache__/result.cpython-310.pyc
 __pycache__/read_csv.cpython-310.pyc
+__pycache__/race_scraping.cpython-310.pyc
+__pycache__/date_scraping.cpython-310.pyc
+__pycache__/create_url.cpython-310.pyc
+
