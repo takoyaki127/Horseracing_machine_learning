@@ -14,3 +14,4 @@ Race_URL.csv
 race_id_(2022, 1)_(2022, 12).csv
 race_id_(2023, 1)_(2023, 3).csv
 __pycache__/scraping.cpython-310.pyc
+__pycache__/read_csv.cpython-310.pyc
