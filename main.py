@@ -4,8 +4,20 @@ from module.race_scraping import day_to_raceID
 import time
 import csv
 
+# 日付の指定
+year_start = 2022
+year_end = 2022
+month_start = 1
+month_end = 12
+
+
 # 開催日程のURLを生成   (year_start,year_end,month_start=1,month_end=12)
-calender_url = create_calender_URL(2018, 2018, 12, 12)
+calender_url = create_calender_URL(
+    year_start,
+    year_end,
+    month_start,
+    month_end
+)
 
 # 開催レース一覧のURLを生成
 event_url = []
@@ -20,6 +32,7 @@ for ele in event_url:
     time.sleep(0.2)
 
 # ファイル書き込み
-with open('Race_URL.csv', 'w') as f:
+file_name = f'race_id_{year_start,month_start}_{year_end,month_end}.csv'
+with open(file_name, 'w') as f:
     writer = csv.writer(f)
     writer.writerow(race_ids)
