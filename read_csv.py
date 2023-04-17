@@ -1,7 +1,5 @@
 import csv
 
-from scraping import scraping_result
-
 
 def read_csv(file_path):
     # './race_id_(2023, 1)_(2023, 3).csv'
