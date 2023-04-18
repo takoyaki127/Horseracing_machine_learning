@@ -18,3 +18,5 @@ jupyter/Untitled.ipynb
 Race_id/module/__pycache__/create_url.cpython-310.pyc
 Race_id/module/__pycache__/date_scraping.cpython-310.pyc
 Race_id/module/__pycache__/race_scraping.cpython-310.pyc
+Data_Frame/module/__pycache__/read_csv.cpython-310.pyc
+Data_Frame/module/__pycache__/scraping.cpython-310.pyc

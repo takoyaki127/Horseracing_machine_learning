@@ -32,7 +32,7 @@ for ele in event_url:
     time.sleep(0.2)
 
 # ファイル書き込み
-file_name = f'csv/race_id_{year_start,month_start}_{year_end,month_end}.csv'
+file_name = f'../csv/race_id_{year_start,month_start}_{year_end,month_end}.csv'
 with open(file_name, 'w') as f:
     writer = csv.writer(f)
     writer.writerow(race_ids)

@@ -13,7 +13,7 @@ def day_to_raceID(url):
     options.add_argument('--headless')
 
     driver = webdriver.Chrome(
-        './chromedriver_win32/chromedriver.exe', options=options)
+        '../chromedriver_win32/chromedriver.exe', options=options)
     driver.implicitly_wait(10)
     driver.get(url)
 
