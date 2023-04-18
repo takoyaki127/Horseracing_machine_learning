@@ -1,5 +1,5 @@
 from module.scraping import scraping_result
-from Data_Frame.module.read_csv import read_csv
+from module.csv_manager import read_csv, df_to_csv
 import pandas as pd
 
 
@@ -11,3 +11,5 @@ for id in race_ids:
     results.append(scraping_result(id))
 
 df = pd.concat(results, ignore_index=True)
+
+df_to_csv(df)
