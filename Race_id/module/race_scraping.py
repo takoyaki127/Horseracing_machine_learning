@@ -2,6 +2,15 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import re
 
+# ブラウザの設定
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+options.add_argument('--log-level=3')
+
+driver = webdriver.Chrome(
+    '../chromedriver_win32/chromedriver.exe', options=options)
+driver.implicitly_wait(10)
+
 
 # 開催日からレースのURLをスクレイピング
 # chromeドライバを'./chromedriver_win32/chromedriver.exe'に入れてください。
@@ -9,12 +18,6 @@ import re
 def day_to_raceID(url):
     url = url
 
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-
-    driver = webdriver.Chrome(
-        '../chromedriver_win32/chromedriver.exe', options=options)
-    driver.implicitly_wait(10)
     driver.get(url)
 
     a_tags = driver.find_elements(
@@ -34,6 +37,5 @@ def url_to_raceID(url):
     return race_id
 
 
-# url = 'https://race.netkeiba.com/top/race_list.html?kaisai_date=20230401'
-# race_id = day_to_raceID(url)
-# pass
+def driver_close():
+    driver.close()
