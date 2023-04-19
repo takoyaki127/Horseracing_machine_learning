@@ -1,6 +1,6 @@
 from module.create_url import create_calender_URL
 from module.date_scraping import calender_to_event_date_link
-from module.race_scraping import day_to_raceID, driver_close
+from module.race_scraping import Chrome
 import time
 import csv
 from tqdm import tqdm
@@ -27,11 +27,12 @@ for event_day in calender_url:
     time.sleep(0.5)
 
 # レースIDを生成
+browser = Chrome()
 race_ids = []
 for ele in tqdm(event_url):
-    race_ids.extend(day_to_raceID(ele))
+    race_ids.extend(browser.day_to_raceID(ele))
     time.sleep(0.2)
-driver_close()
+browser.close()
 
 # ファイル書き込み
 file_name = f'csv/Race_ID/{year_start}-{month_start}_{year_end}-{month_end}.csv'
