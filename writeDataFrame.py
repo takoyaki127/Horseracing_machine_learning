@@ -1,7 +1,8 @@
-from module.scraping import Chrome
-from module.csv_manager import CsvManager
 import pandas as pd
 from tqdm import tqdm
+
+from module.scraping import Chrome
+from module.csv_manager import CsvManager
 
 # 読み込むcsvファイル
 file_path = './csv/Race_ID/2023-1_2023-3.csv'
