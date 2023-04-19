@@ -1,7 +1,4 @@
-chromedriver_win32/LICENSE.chromedriver
-chromedriver_win32/chromedriver.exe
+chromedriver_win32/*
 __pycache__/*
-Race_id/module/__pycache__/*
-Data_Frame/module/__pycache__/*
 csv/*
 module/__pycache__/*
