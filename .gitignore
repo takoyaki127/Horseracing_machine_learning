@@ -2,5 +2,3 @@ chromedriver_win32/*
 __pycache__/*
 csv/*
 module/__pycache__/*
-test.ipynb
-詳細.txt
