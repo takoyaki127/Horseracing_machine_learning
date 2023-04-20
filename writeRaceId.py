@@ -32,7 +32,7 @@ browser = Chrome()
 race_ids = []
 for ele in tqdm(event_url):
     race_ids.extend(browser.day_to_raceID(ele))
-    time.sleep(0.2)
+    time.sleep(0)
 browser.close()
 
 # ファイル書き込み
