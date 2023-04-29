@@ -21,18 +21,18 @@ calender_url = create_calender_URL(
     month_end
 )
 
-# 開催レース一覧のURLを生成
+# 開催レース一覧のURLをスクレイピング
 event_url = []
 for event_day in calender_url:
     event_url.extend(calender_to_event_date_link(event_day))
-    time.sleep(0.5)
+    time.sleep(1)
 
-# レースIDを生成
+# レースIDをスクレイピング
 browser = Chrome()
 race_ids = []
 for ele in tqdm(event_url):
     race_ids.extend(browser.day_to_raceID(ele))
-    time.sleep(0)
+    time.sleep(1)
 browser.close()
 
 # ファイル書き込み
