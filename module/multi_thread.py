@@ -6,11 +6,10 @@ class MultiThread():
     def __init__(self, target, args_list: list[tuple]) -> None:
         self.threads: list[Thread] = []
         self.__target = target
-        self.__args_list = args_list
-        self.__create_threads()
+        self.__create_threads(args_list)
 
-    def __create_threads(self):
-        for args in tqdm(self.__args_list):
+    def __create_threads(self, args_list):
+        for args in tqdm(args_list):
             self.threads.append(Thread(target=self.__target, args=args))
         print('created threads')
 
