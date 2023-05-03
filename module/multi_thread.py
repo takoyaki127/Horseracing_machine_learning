@@ -1,4 +1,5 @@
 from threading import Thread
+from tqdm import tqdm
 
 
 class MultiThread():
@@ -6,10 +7,10 @@ class MultiThread():
         self.threads: list[Thread] = []
         self.__target = target
         self.__args_list = args_list
-        self.__create_threads(target, args_list)
+        self.__create_threads()
 
     def __create_threads(self):
-        for args in self.__args_list:
+        for args in tqdm(self.__args_list):
             self.threads.append(Thread(target=self.__target, args=args))
         print('created threads')
 
