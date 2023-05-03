@@ -5,11 +5,12 @@ import re
 # 未作成のファイルのリストを作成
 def uncreated_files():
     files = glob.glob("./csv/Race_ID/*")
-    exclude_files = __create_exclude_files().append('2018-1_2018-12')
+    exclude_files = __create_exclude_files()
     new_files = []
     for file in files:
         if (__file_path_to_date(file) in exclude_files) == False:  # 作成済みか確認
             file = __replace_backslash_to_forwardslash(file)
+            file = (file,)
             new_files.append(file)
             print(file)
     return new_files
