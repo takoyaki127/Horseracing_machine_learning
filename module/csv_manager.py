@@ -1,5 +1,6 @@
 import csv
 from pandas import DataFrame
+import re
 
 
 class CsvManager():
@@ -16,5 +17,10 @@ class CsvManager():
 
     # DataFrameをcsvに書き込む
     @staticmethod
-    def output_DataFrame(df: DataFrame, header=False):
-        df.to_csv('./csv/Result/data.csv', mode='a', header=header)
+    def output_DataFrame(df: DataFrame, file_name, header=True):
+        file_name = extract_filename_parts(file_name)
+        df.to_csv(f'./csv/Result/{file_name}.csv', mode='a', header=header)
+
+
+def extract_filename_parts(path):
+    return re.search("[0-9]*-[0-9]*_[0-9]*-[0-9]*", path).group()
