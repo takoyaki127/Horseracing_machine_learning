@@ -32,6 +32,6 @@ def main(file_path):
 
 if __name__ == "__main__":
     threads = MultiThread(main, uncreated_files())
-    threads.start(3)
+    threads.start(2)  # 引数はスレッド数
 
     print('finish')
