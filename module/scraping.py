@@ -29,7 +29,7 @@ class Chrome():
 
         return int(mileage.group())
 
-    def scraping_result(self, race_id):
+    def scraping_result(self, race_id) -> DataFrame:
         url = f"https://race.netkeiba.com/race/result.html?race_id={race_id}&rf=race_list"
         dfs = pd.read_html(url)
 
@@ -37,6 +37,9 @@ class Chrome():
         mileage = self.serch_mileage(url)
         df = dfs[0]
         df = add_mileage(df, mileage)
+
+        df = grade_list(df)
+        df = second_float_list(df)
 
         return df
 
@@ -48,3 +51,38 @@ def add_mileage(df: DataFrame, mileage):
     df = pd.concat([df, mileage_series], axis='columns')
 
     return df
+
+
+# 順位のSeriesを変換
+def grade_list(df: DataFrame):
+    rank_list = [rank_to_grade(rank) for rank in df['着 順']]
+    rank_series = pd.Series(rank_list)
+    df['着 順'] = rank_series
+    return df
+
+
+# 1~3 -> 0
+# 4~6 -> 1
+# None -> -1
+def rank_to_grade(n):
+    try:
+        return int(int(n) / 3)
+    except Exception as e:
+        return -1
+
+
+# タイムのSeriesを変換
+def second_float_list(df: DataFrame):
+    sec_list = [time_to_second(time) for time in df['タイム']]
+    sec_series = pd.Series(sec_list)
+    df['タイム'] = sec_series
+    return df
+
+
+def time_to_second(time_str: str):
+    try:
+        minutes, second = time_str.split(':')
+        time_float = float(minutes) * 60 + float(second)
+        return time_float
+    except Exception as e:
+        return -1.0
